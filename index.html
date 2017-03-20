@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Canvas - exercice1</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <canvas id="canvas">
+    <p>Désolé, votre navigateur ne supporte pas Canvas. Mettez-vous à jour</p>
+    </canvas>
+    <a href="file:///home/corentin/www/canvas/exercice2/index.html"><button type="button" name="button">exercice 2</button></a>
+    <a href="file:///home/corentin/www/canvas/exercice3/index.html"><button type="button" name="button">exercice 3</button></a>
+    <script type="text/javascript">
+      //declaration de l variable canvas qui reprend l'id de la balise
+      var canvas = document.getElementById('canvas');
+      //A celle-ci, on applique le contexte 2d
+      var context = canvas.getContext('2d');
+
+      context.fillStyle = 'rgb(164, 215, 231)'; // annonce de la couleur
+      //création d'un carré avec la méthode fill (les deux premiers chiffres représentent la position sur la page (largeur et hauteur)n les deux suivants sont la largeur et la taille)
+      context.fillRect(80, 80, 120, 60);
+      //création d'un chemin
+      context.fillStyle = 'rgb(211,132,53)'; //annonce de la couleur
+      context.beginPath(); //déclare qu'on commence le cheminement
+      context.moveTo(80, 80); // on se place d'abord à cette coordonnée grace à moveTo
+      context.lineTo(200, 80); //ensuite, on se déplace point par point avec lineTo
+      context.lineTo(140, 50);
+      context.fill(); //enfin, on déclare la méthode de remplissage
+
+      context.fillStyle = 'rgb(201,201,201)';
+      context.beginPath();
+      context.moveTo(90, 85);
+      context.lineTo(90, 95);
+      context.lineTo(110, 95);
+      context.lineTo(110, 85);
+      context.lineTo(90, 85);
+      // On peut aussi "casser" un cheminement avec la méthode .moveTo. Le curseur se déplace alors sans perpétrer le trait.
+      context.moveTo(170, 95);
+      context.lineTo(190, 95);
+      context.lineTo(190, 85);
+      context.lineTo(170, 85);
+      context.lineTo(170, 95);
+      context.moveTo(155, 140);
+      context.lineTo(125, 140);
+      context.lineTo(125, 120);
+      context.lineTo(155, 120);
+      context.lineTo(155, 140);
+      context.fill();
+    </script>
+  </body>
+</html>
